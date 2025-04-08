@@ -1,0 +1,50 @@
+div {
+  margin: 10px 0;
+}
+
+.complete > span {
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.content, .content2 {
+  border: 2px solid #ccc;
+  padding: 10px;
+  width: 480px;
+  min-height: 300px;
+
+  /* 내부 내용을 pre 태그 처럼
+    html에 작성된 그대로 출력
+  */
+  white-space: pre-wrap;
+}
+
+.btn-container, .btn-container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  width: 260px;
+  height: 40px;
+}
+textarea {
+  width: 480px;
+  height: 300px;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #b7eba2;
+}
