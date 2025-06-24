@@ -38,6 +38,7 @@ updateBtn.addEventListener("click", () => {
   document.querySelector(".btn-container").classList.add("hidden")
 
   const title = document.querySelector(".title").addEventListener("click", () => {
+    document.querySelector(".inputTitle").innerText = document.querySelector(".title").value
     document.querySelector(".title").classList.add("hidden")
     document.querySelector(".inputTitle").classList.remove("hidden")
   });
@@ -54,9 +55,9 @@ const saveBtn = document.querySelector("#saveBtn");
 saveBtn.addEventListener("click", () => {
 
   const title = document.querySelector(".inputTitle").value;
-  const updateDetail = document.querySelector(".updateDetail").value;
+  const detail = document.querySelector(".updateDetail").value;
 
-  location.href = "/todo/update?todoNo=" + todoNo + "&title=" + title + "&detail=" + updateDetail;
+  location.href = "/todo/update?todoNo=" + todoNo + "&title=" + title + "&detail=" + detail;
 
 });
 
@@ -72,3 +73,26 @@ backBtn.addEventListener("click", () => {
 
 
 });
+
+const deleteBtn = document.querySelector("#deleteBtn");
+deleteBtn.addEventListener("click", () => {
+
+  // 정말 삭제할 것인지 confirm() 을 이용해서 확인
+  // confirm() 은 확인 클릭시 true, 취소 클릭시 false 반환
+
+  // 취소 클릭시
+  if(!confirm("정말 삭제하시겠습니까?")) return; 
+  
+  // 확인 클릭시
+  // /todo/delete?todoNo=1 Get 방식 요청 보내기
+ 
+    location.href = "/todo/delete?todoNo=" + todoNo;
+ 
+
+});
+
+// const updateBtn = document.querySelector("#updateBtn");
+// updateBtn.addEventListener("click", () => {
+//   // 수정 페이지로 이동
+//   location.href = "/todo/update?todoNo=" + todoNo;
+// });

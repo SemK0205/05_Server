@@ -12,6 +12,25 @@
 <link rel="stylesheet" href="/resources/css/main.css">
 </head>
 <body>
+	<c:if test="${empty sessionScope.loginMember}">
+		<form action="/login" method="post">
+			<div style="display : flex">
+				<div style="display : flex; flex-direction: column;">
+					<div>아이디 : <input type="text" name="userId"></div>
+					<div>비밀번호 : <input type="password" name="userPw"></div>
+				</div>
+				<div>	
+					<button style="height: 100%">로그인</button>
+				</div>
+			</div> 
+		</form>
+	</c:if>
+	
+	<c:if test="${not empty sessionScope.loginMember}">
+		<p>${sessionScope.loginMember} 환영합니다!</p>
+	</c:if>
+	
+	<button type="button" id="logout">로그아웃</button>
 
 	<h1>Todo List</h1>
 

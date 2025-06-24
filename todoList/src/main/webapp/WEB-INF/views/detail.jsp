@@ -10,6 +10,8 @@
 </head>
 <body>
 
+	<h1>${sessionScope.loginMember}</h1>
+
 	<div><h1 class="title">${todo.todoTitle}</h1></div>
 	<div><input class="inputTitle hidden" style="font-weight: bold; font-size: 30px; margin-top: 20px;"></div>
 
