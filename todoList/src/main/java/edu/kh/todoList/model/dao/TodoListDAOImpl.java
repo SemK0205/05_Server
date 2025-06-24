@@ -216,12 +216,13 @@ public class TodoListDAOImpl implements TodoListDAO {
 			
 			pstmt = conn.prepareStatement(SQL);
 			
-			pstmt.setString(1, todoTitle);
-			pstmt.setString(2, updateDetail);
-			pstmt.setInt(3, todoNo);
+
+			pstmt.setInt(1, todoNo);
+			pstmt.setString(2, todoTitle);
+			pstmt.setString(3, updateDetail);
 			
 			result = pstmt.executeUpdate();
-			
+
 			
 		} finally {
 			close(rs);
@@ -229,6 +230,7 @@ public class TodoListDAOImpl implements TodoListDAO {
 		}
 		
 		return result;
+
 	}
 
 
@@ -280,6 +282,7 @@ public class TodoListDAOImpl implements TodoListDAO {
 		}
 		
 		return result;
+
 	}
 
 }
